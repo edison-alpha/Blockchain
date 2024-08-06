@@ -104,7 +104,11 @@ function MintSBT() {
           VoteID NFT: SBT Unik syarat untuk Voting
         </h2>
         <p className="text-gray-600 mb-4 text-center lg:text-left">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        Soulbound Token (SBT) adalah jenis token kripto yang dirancang
+        untuk tidak dapat dipindahkan atau diperdagangkan setelah
+        diterbitkan. VoteID NFT berfungsi sebagai SBT yang unik untuk
+        setiap pemilih. Token ini berfungsi sebagai identitas digital
+        dan sebagai syarat eligible melakukan voting.
         </p>
         <button
           className={`bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full w-full mb-4 ${!account && 'opacity-50 cursor-not-allowed'}`}

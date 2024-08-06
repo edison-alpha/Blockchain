@@ -20,8 +20,8 @@ export const AuthContextProvider = ({ children }) => {
   // Fungsi untuk menghubungkan wallet ke aplikasi
   const connectWallet = useCallback(async () => {
     if (!window.ethereum) {
-      console.error('MetaMask tidak terpasang!');
-      return;
+      console.error('MetaMask tidak terpasang! Mengarahkan ke halaman unduh MetaMask.');
+      window.location.href = 'https://metamask.io/download.html';
     }
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);

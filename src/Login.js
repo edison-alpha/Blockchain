@@ -8,16 +8,14 @@ import pinata from './img/pinata-logo.webp';
 import th from './img/th.png';
 import { AuthContext } from './context/AuthContext';
 import './global.css';
-import img from './img/mint.png'; // Import gambar untuk tampilan
+import image from './img/mint.png'; // Import gambar untuk tampilan
 import { Dialog, Transition } from '@headlessui/react';
 
 function Login() {
   const { connected, connectWallet, disconnectWallet, isAdmin } =
     useContext(AuthContext);
-  const [svgDropdownOpen, setSvgDropdownOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const toggleSvgDropdown = () => setSvgDropdownOpen(!svgDropdownOpen);
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
 
@@ -390,7 +388,7 @@ function Login() {
           </div>
           <div className='max-w-8xl mx-auto p-3 pt-0 lg:flex lg:items-start lg:justify-center lg:pt-4'>
             <div className='mb-20 mt-84 hidden lg:flex lg:flex-col lg:w-3/6 lg:items-center lg:justify-center'>
-              <img src={img} alt='NFT' />
+              <img src={image} alt='NFT' />
             </div>
             <div className='flex flex-col justify-center lg:w-3/6 lg:ml-8 mt-8 md:mt-0 lg:mt-0'>
               <h2 className='text-3xl font-bold mb-2 text-center lg:text-left'>

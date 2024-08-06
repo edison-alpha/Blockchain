@@ -38,22 +38,6 @@ function MintSBT() {
     fetchAccount();
   }, []);
 
-  const connectWallet = async () => {
-    if (window.ethereum) {
-      try {
-        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-        setAccount(accounts[0]);
-        setStatus("");
-        await checkMintedStatus(accounts[0]); // Periksa status minting setelah koneksi
-      } catch (error) {
-        console.error("Error connecting to wallet", error);
-        setStatus("Error connecting to wallet");
-      }
-    } else {
-      setStatus("Metamask not detected");
-    }
-  };
-
   const checkMintedStatus = async (userAddress) => {
     if (!userAddress) return;
     const provider = new ethers.providers.Web3Provider(window.ethereum);

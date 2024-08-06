@@ -1,17 +1,10 @@
 import { Fragment, useContext, useEffect, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { Link, NavLink, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import {
   Bars3BottomLeftIcon,
   XMarkIcon,
-  CheckCircleIcon,
-  RectangleStackIcon,
-  ChartBarIcon,
-  UserPlusIcon,
-  InformationCircleIcon,
-  ArchiveBoxArrowDownIcon,
-  UsersIcon,
 } from '@heroicons/react/24/outline';
 import CandidateDetails from './components/CandidateDetails';
 import AddCandidate from './components/AddCandidate';
@@ -23,42 +16,38 @@ import MintSBT from './components/MintSBT';
 import { AuthContext } from './context/AuthContext';
 
 // Daftar menu navigasi untuk admin
-const adminNav = [
-  {
-    name: 'Candidate Details',
-    href: '/dashboard/candidate-details',
-    icon: InformationCircleIcon,
-  },
-  {
-    name: 'Add Candidate',
-    href: '/dashboard/add-candidate',
-    icon: UserPlusIcon,
-  },
-  { name: 'Register', href: '/dashboard/register', icon: UsersIcon },
-  { name: 'Result', href: '/dashboard/result', icon: ChartBarIcon },
-];
+// const adminNav = [
+//   {
+//     name: 'Candidate Details',
+//     href: '/dashboard/candidate-details',
+//     icon: InformationCircleIcon,
+//   },
+//   {
+//     name: 'Add Candidate',
+//     href: '/dashboard/add-candidate',
+//     icon: UserPlusIcon,
+//   },
+//   { name: 'Register', href: '/dashboard/register', icon: UsersIcon },
+//   { name: 'Result', href: '/dashboard/result', icon: ChartBarIcon },
+// ];
 
-// Daftar menu navigasi untuk pemilih
-const voterNav = [
-  {
-    name: 'Information',
-    href: '/dashboard/information',
-    icon: InformationCircleIcon,
-  },
-  { name: 'Search', href: '/dashboard/search', icon: CheckCircleIcon },
-  { name: 'Vote-Area', href: '/dashboard/vote-area', icon: RectangleStackIcon },
-  { name: 'Result', href: '/dashboard/result', icon: ChartBarIcon },
-  {
-    name: 'Mint SBT',
-    href: '/dashboard/mint-sbt',
-    icon: ArchiveBoxArrowDownIcon,
-  },
-];
+// // Daftar menu navigasi untuk pemilih
+// const voterNav = [
+//   {
+//     name: 'Information',
+//     href: '/dashboard/information',
+//     icon: InformationCircleIcon,
+//   },
+//   { name: 'Search', href: '/dashboard/search', icon: CheckCircleIcon },
+//   { name: 'Vote-Area', href: '/dashboard/vote-area', icon: RectangleStackIcon },
+//   { name: 'Result', href: '/dashboard/result', icon: ChartBarIcon },
+//   {
+//     name: 'Mint SBT',
+//     href: '/dashboard/mint-sbt',
+//     icon: ArchiveBoxArrowDownIcon,
+//   },
+// ];
 
-// Fungsi untuk menggabungkan kelas CSS
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
-}
 
 // Komponen yang ditampilkan berdasarkan pilihan menu
 const components = {
@@ -83,7 +72,7 @@ function Home() {
   const [component, setComponent] = useState(1);
   const Component = components[component];
   // State untuk menyimpan pesan atau status saat ini
-  const [msg, setMsg] = useState();
+  const [setMsg] = useState();
 
   useEffect(() => {
     switch (id) {

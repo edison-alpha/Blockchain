@@ -22,6 +22,7 @@ export const AuthContextProvider = ({ children }) => {
     if (!window.ethereum) {
       console.error('MetaMask tidak terpasang! Mengarahkan ke halaman unduh MetaMask.');
       window.location.href = 'https://metamask.io/download.html';
+      return;
     }
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);

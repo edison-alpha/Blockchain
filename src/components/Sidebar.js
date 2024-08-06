@@ -1,17 +1,12 @@
-import { Fragment, useContext, useState, useEffect } from 'react';
-import { Dialog, Menu, Transition } from '@headlessui/react';
-import img from '../img/vote.png';
+import { useContext, useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import {
-  CalendarIcon,
   FolderIcon,
   UserPlusIcon,
-  XMarkIcon,
   UsersIcon,
   ChartBarIcon,
   CheckCircleIcon,
   RectangleStackIcon,
-  ArchiveBoxArrowDownIcon,
   InformationCircleIcon,
 } from '@heroicons/react/24/outline';
 import { AuthContext } from '../context/AuthContext';
@@ -50,9 +45,7 @@ const voterNav = [
   { id: 4, name: 'Mint SBT', to: '/dashboard/mint-sbt', icon: FolderIcon },
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
-}
+
 const Sidebar = ({ onClick }) => {
   const { id } = useParams();
   const [current, setCurrent] = useState(0);
@@ -84,8 +77,10 @@ const Sidebar = ({ onClick }) => {
       case 'mint-sbt':
         setCurrent(6);
         break;
+      default:
+      setCurrent(0); // Atau nilai default yang sesuai
     }
-  }, []);
+  }, [id]);
 
   const handleClick = (id, name) => {
     setCurrent(id);
@@ -105,14 +100,14 @@ const Sidebar = ({ onClick }) => {
             </a>
           </div>
           <div className='mt-5 flex flex-grow flex-col'>
-            {account != adminAccount ? (
+            {account !== adminAccount ? (
               <nav className='flex-1 space-y-1 px-2 pb-4'>
                 {voterNav.map((item) => (
                   <Link
                     key={item.name}
                     to={`${item.to}`}
                     className={
-                      current == item.id
+                      current === item.id
                         ? `bg-blue text-white group flex items-center px-4 py-3 text-sm font-medium rounded-[4px]`
                         : `text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-4 py-3 text-sm font-medium rounded-[4px]`
                     }
@@ -120,7 +115,7 @@ const Sidebar = ({ onClick }) => {
                   >
                     <item.icon
                       className={
-                        current == item.id
+                        current === item.id
                           ? 'text-white mr-3 flex-shrink-0 h-6 w-6'
                           : 'text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6'
                       }
@@ -137,7 +132,7 @@ const Sidebar = ({ onClick }) => {
                     key={item.name}
                     to={`${item.to}`}
                     className={
-                      current == item.id
+                      current === item.id
                         ? `bg-blue text-white group flex items-center px-4 py-3 text-sm font-medium rounded-[4px]`
                         : `text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-4 py-3 text-sm font-medium rounded-[4px]`
                     }
@@ -145,7 +140,7 @@ const Sidebar = ({ onClick }) => {
                   >
                     <item.icon
                       className={
-                        current == item.id
+                        current === item.id
                           ? 'text-white mr-3 flex-shrink-0 h-6 w-6'
                           : 'text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6'
                       }

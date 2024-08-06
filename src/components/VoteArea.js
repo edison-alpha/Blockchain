@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import img from "../img/Poll.gif";
-import stampImg from "../img/Stamp.png"; // Gambar stempel besar
 import Loader from './Loader';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,6 +10,7 @@ const VoteArea = () => {
   const [candidates, setCandidates] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [votedCandidates, setVotedCandidates] = useState(new Set());
+  const [hasVoted, setHasVoted] = useState(false); // Track if user has voted
 
   useEffect(() => {
     if (!provider || !contract) return; // Jika tidak ada provider atau contract, keluar dari efek
@@ -53,6 +53,7 @@ const VoteArea = () => {
   
       // Update votedCandidates dengan benar
       setVotedCandidates((prev) => new Set(prev.add(candidate_id)));
+      setHasVoted(true); // Set user has voted
   
       setIsLoading(false);
       toast.success('You cast your vote!', {
@@ -104,7 +105,6 @@ const VoteArea = () => {
       }
     }
   };
-  
 
   // Check if wallet is connected
   if (!account) {
@@ -138,15 +138,8 @@ const VoteArea = () => {
             candidates?.map((item, i) => (
               <div
                 key={i}
-                className={`relative flex flex-col items-center p-8 bg-gray-100 drop-shadow-xl rounded-[20px] ${votedCandidates.has(item.candidate_id.toNumber()) ? 'opacity-60' : ''}`}
+                className={`relative flex flex-col items-center p-8 bg-gray-100 drop-shadow-xl rounded-[20px] ${hasVoted && !votedCandidates.has(item.candidate_id.toNumber()) ? 'opacity-60 pointer-events-none' : ''}`}
               >
-                {votedCandidates.has(item.candidate_id.toNumber()) && (
-                  <img
-                    src={stampImg}
-                    alt="Stamp"
-                    className="absolute top-0 left-0 w-24 h-24 transform -translate-x-1/2 -translate-y-1/2 z-10"
-                  />
-                )}
                 <div className='flex justify-center'>
                   <img className='h-36 w-36 rounded-full object-cover' src={`https://gateway.pinata.cloud/ipfs/${item.candidate_img}`} alt="" />
                 </div>
@@ -156,7 +149,7 @@ const VoteArea = () => {
                   <button
                     type="button"
                     onClick={() => addYourVote(item.candidate_id.toNumber())}
-                    className="mt-5 inline-flex items-center rounded border border-transparent bg-white border-[#3ed0d9] px-5 py-2 text-sm font-medium text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-[#3ed0d9] focus:ring-offset-2"
+                    className={`mt-5 inline-flex items-center rounded border border-transparent bg-white border-[#3ed0d9] px-5 py-2 text-sm font-medium text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-[#3ed0d9] focus:ring-offset-2 ${hasVoted && !votedCandidates.has(item.candidate_id.toNumber()) ? 'pointer-events-none' : ''}`}
                   >
                     <span className='text-lg font-semibold'>Vote</span>
                     <img src={img} className="h-8 ml-2" alt="" />

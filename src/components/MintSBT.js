@@ -4,7 +4,7 @@ import SoulboundToken from './SoulboundToken.json'; // Import ABI kontrak Soulbo
 import img from "../img/mint.png"; // Import gambar untuk tampilan
 
 // Alamat kontrak SoulboundToken di jaringan Ethereum Sepolia
-const soulboundTokenAddress = "0x719cF39987c480928dF6b44E9d10Bd6dA3dD67eB";
+const soulboundTokenAddress = "0x1C2FB580613A5FCc434eE00DBFafd1eD07D0d082";
 
 function MintSBT() {
   // State untuk menyimpan alamat akun wallet pengguna
@@ -120,7 +120,7 @@ function MintSBT() {
         )}
         <p className="text-center text-sm text-gray-500 mb-4 lg:text-left">{status}</p>
         <div className="mt-2 text-center text-sm text-gray-700 lg:text-left">
-          <p><span className="font-bold">Contract Address:</span>0xb2A829b6f467F0DdA930175d43E0b7aE09DC6108<a href='https://sepolia.etherscan.io/token/0xb2A829b6f467F0DdA930175d43E0b7aE09DC6108' className="text-blue-500 hover:underline">View on Etherscan</a></p>
+          <p><span className="font-bold">Contract Address:</span>0x1C2FB580613A5FCc434eE00DBFafd1eD07D0d082<a href='https://sepolia.etherscan.io/token/0x1C2FB580613A5FCc434eE00DBFafd1eD07D0d082' className="text-blue-500 hover:underline">View on Etherscan</a></p>
         </div>
       </div>
     </div>

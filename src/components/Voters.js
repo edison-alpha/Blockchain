@@ -82,11 +82,7 @@ export default function Voters() {
                       <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                         <div className="flex items-center">
                           <div className="ml-4">
-                            <div className="font-medium text-indigo-700 hover:bg-indigo">
-                              <a href="https://sepolia.etherscan.io/token/0xb2A829b6f467F0DdA930175d43E0b7aE09DC6108">
-                                tx hash
-                              </a>
-                            </div>
+                            <div className="font-medium text-gray-900">{transactions[address] || 'Fetching...'}</div>
                           </div>
                         </div>
                       </td>

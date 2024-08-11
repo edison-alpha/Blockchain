@@ -8,7 +8,7 @@ import pinata from './img/pinata-logo.webp';
 import th from './img/th.png';
 import { AuthContext } from './context/AuthContext';
 import './global.css';
-import image from './img/mint.png'; // Import gambar untuk tampilan
+import image from './img/mint.jpg'; // Import gambar untuk tampilan
 import { Dialog, Transition } from '@headlessui/react';
 
 function Login() {

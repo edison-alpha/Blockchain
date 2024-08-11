@@ -29,9 +29,9 @@ export const AuthContextProvider = ({ children }) => {
       await provider.send('eth_requestAccounts', []);
       const signer = provider.getSigner();
       const address = await signer.getAddress();
-      const contractAddress = '0x770E4d40Acb07565E48a05479558261Ab3136e1f';
+      const contractAddress = '0x6684EFC86B0263D1C371B687127d97C308eBbA3D';
       const soulboundContractAddress =
-        '0x1C2FB580613A5FCc434eE00DBFafd1eD07D0d082';
+        '0x3534b4BC726B077D81331AD6912C237901d06EC3';
 
       const contract = new ethers.Contract(
         contractAddress,

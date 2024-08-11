@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import SoulboundToken from './SoulboundToken.json'; // Import ABI kontrak SoulboundToken
-import img from "../img/mint.png"; // Import gambar untuk tampilan
+import img from "../img/mint.jpg"; // Import gambar untuk tampilan
 
 // Alamat kontrak SoulboundToken di jaringan Ethereum Sepolia
 const soulboundTokenAddress = "0x3534b4BC726B077D81331AD6912C237901d06EC3";

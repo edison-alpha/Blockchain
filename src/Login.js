@@ -415,9 +415,9 @@ function Login() {
               <div className='mt-2 text-center text-sm text-gray-700 lg:text-left'>
                 <p>
                   <span className='font-bold'>Contract Address:</span>
-                  0xb2A829b6f467F0DdA930175d43E0b7aE09DC6108
+                  0x3534b4BC726B077D81331AD6912C237901d06EC3
                   <a
-                    href='https://sepolia.etherscan.io/token/0xb2A829b6f467F0DdA930175d43E0b7aE09DC6108'
+                    href='https://sepolia.etherscan.io/token/0x3534b4BC726B077D81331AD6912C237901d06EC3'
                     className='text-blue-500 hover:underline'
                   >
                     View on Etherscan

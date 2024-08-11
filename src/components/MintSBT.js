@@ -4,7 +4,7 @@ import SoulboundToken from './SoulboundToken.json'; // Import ABI kontrak Soulbo
 import img from "../img/mint.png"; // Import gambar untuk tampilan
 
 // Alamat kontrak SoulboundToken di jaringan Ethereum Sepolia
-const soulboundTokenAddress = "0x1C2FB580613A5FCc434eE00DBFafd1eD07D0d082";
+const soulboundTokenAddress = "0x3534b4BC726B077D81331AD6912C237901d06EC3";
 
 function MintSBT() {
   // State untuk menyimpan alamat akun wallet pengguna

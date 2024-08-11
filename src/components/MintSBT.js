@@ -108,7 +108,7 @@ function MintSBT() {
         )}
         <p className="text-center text-sm text-gray-500 mb-4 lg:text-left">{status}</p>
         <div className="mt-2 text-center text-sm text-gray-700 lg:text-left">
-          <p><span className="font-bold">Contract Address:</span>0x1C2FB580613A5FCc434eE00DBFafd1eD07D0d082<a href='https://sepolia.etherscan.io/token/0x1C2FB580613A5FCc434eE00DBFafd1eD07D0d082' className="text-blue-500 hover:underline">View on Etherscan</a></p>
+          <p><span className="font-bold">Contract Address:</span>0x3534b4BC726B077D81331AD6912C237901d06EC3<a href='https://sepolia.etherscan.io/token/0x3534b4BC726B077D81331AD6912C237901d06EC3' className="text-blue-500 hover:underline">View on Etherscan</a></p>
         </div>
       </div>
     </div>
